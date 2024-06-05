@@ -73,8 +73,8 @@ class Solver {
             substeps = 8;
 
             PI = M_PI;
-            max_angle = 3 * PI / 4;
-            shooting_offset = - PI / 4.5;
+            max_angle = 6 * PI / 4;
+            shooting_offset = - PI / 9;
         }
         void addObject() {
             float t = runtime.getElapsedTime().asSeconds();
@@ -86,8 +86,7 @@ class Solver {
                 t = max_angle - t;
             }
 
-            VerletObject object(rand() % 13 + 3, speed * sf::Vector2f(cos(t - shooting_offset), sin(t - shooting_offset)));
-            m_objects.push_back(object);
+            m_objects.emplace_back(rand() % 13 + 3, speed * sf::Vector2f(cos(t - shooting_offset), sin(t - shooting_offset)));
         }
 
         void renderObjects(sf::RenderWindow* target, float dt) {

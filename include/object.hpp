@@ -37,8 +37,7 @@ struct VerletObject {
         position_last = position;
         position = position + velocity + acceleration * dt * dt;
 
-        sf::Vector2f reset;
-        acceleration = reset;
+        acceleration = sf::Vector2f();
 
         shape.setPosition(position);
     }

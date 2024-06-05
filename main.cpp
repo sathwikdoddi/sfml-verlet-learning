@@ -4,7 +4,7 @@
 
 int main()
 {
-    int max_objects = 100;
+    int max_objects = 200;
 
     sf::RenderWindow window(sf::VideoMode(1000, 1000), "Verlet Integration");
     window.setFramerateLimit(60);
